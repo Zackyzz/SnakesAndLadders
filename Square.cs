@@ -25,6 +25,7 @@ namespace SnakeuriSiLaderuri
                 Top = y,
                 Left = x
             };
+
             Label label = new Label();
             label.Dock = DockStyle.Fill;
             label.TextAlign = ContentAlignment.MiddleCenter;
