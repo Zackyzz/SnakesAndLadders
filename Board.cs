@@ -10,19 +10,23 @@ namespace SnakeuriSiLaderuri
 {
     class Board
     {
-        public void Show(Form form)
+        public void Show(Form f)
         {
-            Square square = new Square
+            Random rnd = new Random();
+            for (int i = 0; i < 100; i++)
             {
-                height = 100,
-                width = 100,
-                x = 0,
-                y = 0,
-                color = Color.Blue,
-                number = 7
-            };
-            square.createSquare(form);
+                Color randomColor = Color.FromArgb(rnd.Next(175, 256), rnd.Next(175, 256), rnd.Next(175, 256));
+                Square square = new Square
+                {
+                    color = randomColor,
+                    width = Constants.width,
+                    height = Constants.height,
+                    number = i + 1,
+                    x = i * 50 % 500,
+                    y = i / 10 * 50
+                };
+                square.createSquare(f);
+            }
         }
-
     }
 }

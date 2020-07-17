@@ -10,7 +10,7 @@ namespace SnakeuriSiLaderuri
 {
     public class Square
     {
-        public int number = 7;
+        public int number;
         public int x, y;
         public int height, width;
         public Color color;
@@ -29,6 +29,7 @@ namespace SnakeuriSiLaderuri
             label.Dock = DockStyle.Fill;
             label.TextAlign = ContentAlignment.MiddleCenter;
             label.Text = number.ToString();
+            label.Font = new Font("Segoe", 10);
             panel.Controls.Add(label);
 
             f.Controls.Add(panel);
