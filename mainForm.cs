@@ -30,13 +30,17 @@ namespace SnakeuriSiLaderuri
             dice.Location = new Point(500, 200);
             dice.Size = new Size(100, 100);
             dice.BackColor = Color.AliceBlue;
-
-            Label label = new Label();
-            label.Dock = DockStyle.Fill;
-            label.TextAlign = ContentAlignment.MiddleCenter;
-            label.Text = "7";
-            dice.Controls.Add(label);
+            dice.Click += new EventHandler(diceClick);
             this.Controls.Add(dice);
+        }
+        private void diceClick(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            /*Label label = new Label();
+            label.Dock = DockStyle.Fill;
+            label.TextAlign = ContentAlignment.MiddleCenter;*/
+            ((Button)sender).Text = "Dice 1 o dat: " + rnd.Next(1, 7).ToString() + "\n" + "Dice 2 o dat: " + rnd.Next(1, 7).ToString();
+            //((Button)sender).Controls.Add(label);
         }
     }
 }
