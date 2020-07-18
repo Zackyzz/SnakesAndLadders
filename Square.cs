@@ -15,9 +15,11 @@ namespace SnakeuriSiLaderuri
         public int height, width;
         public Color color;
 
+        public Panel panel;
+        public Panel panelPlayer;
         public void createSquare(Form f)
         {
-            Panel panel = new Panel
+            panel = new Panel
             {
                 BackColor = color,
                 Width = width,
@@ -25,6 +27,15 @@ namespace SnakeuriSiLaderuri
                 Top = y,
                 Left = x
             };
+
+            panelPlayer = new Panel
+            {
+                BackColor = color,
+                Dock = DockStyle.Top,
+                Height = height / 3
+            };
+
+            panel.Controls.Add(panelPlayer);
 
             Label label = new Label();
             label.Dock = DockStyle.Fill;

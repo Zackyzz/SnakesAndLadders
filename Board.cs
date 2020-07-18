@@ -10,6 +10,7 @@ namespace SnakeuriSiLaderuri
 {
     class Board
     {
+        public List<Square> squaresList = new List<Square>();
         public void Show(Form f)
         {
             Random rnd = new Random();
@@ -25,7 +26,8 @@ namespace SnakeuriSiLaderuri
                     x = i * 50 % 500,
                     y = i / 10 * 50
                 };
-                square.createSquare(f);
+                squaresList.Add(square);
+                squaresList[i].createSquare(f);
             }
         }
     }
